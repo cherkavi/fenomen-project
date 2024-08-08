@@ -1,0 +1,70 @@
+<beans xmlns="http://xfire.codehaus.org/config/1.0">
+	<!--  MODULE:BEGIN -->
+  <service>
+    <name>HeartBeat</name>
+    <namespace>fenomen.module.web_service</namespace>
+    <serviceClass>fenomen.module.web_service.service.IHeartBeat</serviceClass>
+    <implementationClass>fenomen.module.web_service.service_implementation.HeartBeatImplementation</implementationClass>
+  </service>
+  
+  <service>
+    <name>Task</name>
+    <namespace>fenomen.module.web_service</namespace>
+    <serviceClass>fenomen.module.web_service.service.ITask</serviceClass>
+    <implementationClass>fenomen.module.web_service.service_implementation.TaskImplementation</implementationClass>
+  </service>
+
+  <service>
+    <name>Information</name>
+    <namespace>fenomen.module.web_service</namespace>
+    <serviceClass>fenomen.module.web_service.service.IInformation</serviceClass>
+    <implementationClass>fenomen.module.web_service.service_implementation.InformationImplementation</implementationClass>
+  </service>
+
+  <service>
+    <name>Alarm</name>
+    <namespace>fenomen.module.web_service</namespace>
+    <serviceClass>fenomen.module.web_service.service.IAlarm</serviceClass>
+    <implementationClass>fenomen.module.web_service.service_implementation.AlarmImplementation</implementationClass>
+  </service>
+	<!--  MODULE:END -->
+
+	<!--  MONITOR:BEGIN -->   
+  <service>
+    <name>Login</name>
+    <namespace>fenomen.monitor.web_service</namespace>
+    <serviceClass>fenomen.monitor.web_service.interf.ILogin</serviceClass>
+    <implementationClass>fenomen.monitor.web_service.server_implementation.LoginImplementation</implementationClass>
+  </service>
+  
+  
+  <service>
+    <name>RestartSettings</name>
+    <namespace>fenomen.monitor.web_service</namespace>
+    <serviceClass>fenomen.monitor.web_service.interf.IRestartSettings</serviceClass>
+    <implementationClass>fenomen.monitor.web_service.server_implementation.RestartSettingsImplementation</implementationClass>
+  </service>
+
+  <service>
+    <name>InformationSettings</name>
+    <namespace>fenomen.monitor.web_service</namespace>
+    <serviceClass>fenomen.monitor.web_service.interf.IInformationSettings</serviceClass>
+    <implementationClass>fenomen.monitor.web_service.server_implementation.InformationSettingsImplementation</implementationClass>
+  </service>
+
+  <service>
+    <name>AlarmSettings</name>
+    <namespace>fenomen.monitor.web_service</namespace>
+    <serviceClass>fenomen.monitor.web_service.interf.IAlarmSettings</serviceClass>
+    <implementationClass>fenomen.monitor.web_service.server_implementation.AlarmSettingsImplementation</implementationClass>
+  </service>
+
+  <service>
+    <name>HeartBeatSettings</name>
+    <namespace>fenomen.monitor.web_service</namespace>
+    <serviceClass>fenomen.monitor.web_service.interf.IHeartBeatSettings</serviceClass>
+    <implementationClass>fenomen.monitor.web_service.server_implementation.HeartBeatSettingsImplementation</implementationClass>
+  </service>
+
+   <!--   MONITOR:END -->
+</beans>
