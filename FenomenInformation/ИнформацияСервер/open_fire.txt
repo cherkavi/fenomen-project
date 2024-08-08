@@ -1,0 +1,12 @@
+login: admin
+password: 12345
+
+
+Для open-fire обязательно прописать для каждого пользователя Roster на сервера, а серверу Roster на пользователя
+Substcription - both !!!
+
+
+JID: server@127.0.0.1
+
+
+

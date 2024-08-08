@@ -1,0 +1,68 @@
+
+1. FenomenServer - серверная часть 
+	MySQL дамп базы 
+		Backup базы данных fenomen на источнике
+		Restore базы данных fenomen на приемнике
+		this("fenomen","technik","technik");		
+
+	каталоги для хранения данных ( событий от удаленных модулей, задачи для удаленных модулей )
+		SELECT * FROM module_storage m;
+		создать на приемнике (или прописать в базу данных )
+		
+	Jabber OpenFire
+		имя сервера - ( если локально - 127.0.0.1)
+		
+		создать для каждого монитора на сервере OpenFire записи 
+			SELECT * FROM monitor
+
+		создать для сервера запись на сервере OpenFire
+			SELECT * FROM system_jabber_monitor_settings
+			(jabber_server_proxy - любое имя )
+
+		создать Roster для каждого клиента<->сервера: Users/Groups->User Options->Roster->Subscription ( Parameter - BOTH )
+		(для оповещения о входе в сеть и выходе из сети )
+	
+	Tomcat Apache 5.5 - установка
+
+	Переписывание в каталог WebApps FenomenServer.war
+	
+	Принудительный запуск, 127.0.0.1:8080/FenomerServer/Start		
+
+	FenomenMonitor
+		в случае обновления - обновить файл jar в проекте FenomenServer
+
+
+2. FenomenControllerSecondLevel
+	Переписать в каталог WebApps приемника весь каталог из приемника	
+
+3. FenomenMonitorManager
+	Переписать в каталог WebApps приемника весь каталог из приемника	
+
+
+4. FenomenModule
+	FenomenModule.jar - главный файл для работы на удаленном модуле
+	
+	start.bat - командный файл для запуска программы 
+
+	module.id - properties файл, который содержит код-идентификатор (текстовое представление ) 
+данного модуля на сервере: select * from module where id_module=''
+	
+	settings.properties - настройки потоков, которые были получены от удаленного сервера 
+
+	ComPortReaderWriter.jar - программа для обмена данными с COM-порта в безопастном режиме 
+
+	com_port.settings - настройки для работы COM порта
+(порты должны быть освобождены от блокировки локального Firewall-а) 
+
+	/AlarmChecker - каталог для хранения полученных от сервера объектов по адресам в сети ModBus, 
+которые определяют Alarm события
+
+	/InformationChecker - каталог для хранения полученных от сервера объектов по адресам в сети ModBus, 
+которые определяют Information события
+
+	/HardPart/CP210x_VCP_Win2K_XP_S2K3.zip драйвер для COM порта, если используется виртуальное USB устройство
+5. FenomenServer 
+	  проверить наличие соединения с базой данных this("fenomen","technik","technik");
+	  проверить JNLP файл на настройку под сервер (IP адрес или DNS имя )
+	  проверить работу OpenFire и клиентов OpenFire
+	

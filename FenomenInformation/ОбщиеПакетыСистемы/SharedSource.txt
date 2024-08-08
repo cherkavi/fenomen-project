@@ -1,0 +1,65 @@
+Общие папки, в которых должны быть одинаковые файлы:
+	>>>FenomenControllerSecondLevel
+		database (FenomenServer except StaticConnector.java)
+		fenomen
+			server
+				controller
+					server (FenomenServer)
+						generator_alarm_checker (FenomenModule, FenomenServer)
+							calc
+							calc_implementation
+							message
+						utility
+							xml_data
+								alarm
+								information
+								task
+			
+	>>>FenomenModule
+		fenomen
+			module
+				web_service (FenomenServer)
+					common (except ModuleIdentifier.java (added constructor))
+					service
+			server
+				controller
+					server
+						generator_alarm_checker (FenomenControllerSecondLevel, FenomenServer)
+							calc
+							calc_implementation
+							message
+							
+
+	>>>FenomenServer
+		database (FenomenControllerSecondLevel except StaticConnector.java)
+		fenomen
+			module
+				web_service (FenomenModule)
+					common (ModuleIdentifier - есть особенности, только POJO элементы, функционал не трогать)
+					service
+			server
+				controller
+					server (FenomenControllerSecondLevel)
+						generator_alarm_checker (FenomenControllerSecondLevel, FenomenModule)
+							calc
+							calc_implementation
+							message
+						utility
+							xml_data
+								alarm
+								information
+								task
+			monitor
+				web_service 
+					common (FenomenMonitor)
+					interf (FenomenMonitor)
+				
+	>>>FenomenMonitor
+		fenomen
+			monitor
+				web_service 
+					common (FenomenServer)
+					interf (FenomenServer)
+					
+	>>>FenomenMonitorManager
+		database (FenomerServer)
