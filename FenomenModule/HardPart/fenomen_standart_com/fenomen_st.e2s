@@ -1,0 +1,10 @@
+#------ START --------
+SELECTDEVICE ATMEGA16
+CLEARBUFFER
+LOAD-PROG fenomen_st.hex
+LOAD-DATA fenomen_st.eep
+WRITE-PROG
+WRITE-DATA
+VERIFY-PROG
+VERIFY-DATA
+#------- END ---------

@@ -1,0 +1,13 @@
+1. Установить драйвер 
+   CP210x_VCP_Win2K_XP_S2K3.exe 
+
+2. Диспетчер устройств.Порты (COM и LPT).
+devmgmt.msc
+
+3. Данные передаются в 7-и битном формате
+
+
+Rate: 9600
+Data: 7 bit
+StopBit:2
+ParityControl:none

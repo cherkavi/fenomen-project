@@ -1,0 +1,7 @@
+#------ START --------
+SELECTDEVICE ATMEGA16
+CLEARBUFFER
+LOAD-PROG test_usb.hex
+WRITE-PROG
+VERIFY-PROG
+#------- END ---------

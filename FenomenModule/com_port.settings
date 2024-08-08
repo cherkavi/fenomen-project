@@ -1,0 +1,9 @@
+tcp_port_input_data=20100
+tcp_port_output_data=20101
+tcp_port_heart_beat=20102
+time_heart_beat=5000
+
+run_command=java -jar ComPortReaderWriter.jar COM4 9600 7 2 none 127.0.0.1 20100 20101 20102 4000
+
+logger_level=INFO
+logger_file=out.debug
